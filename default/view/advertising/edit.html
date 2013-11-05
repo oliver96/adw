@@ -1,0 +1,69 @@
+<?php include($VIEW_PATH . "/_public/header.html"); ?>
+<ul class="breadcrumb">
+    <li><a href="<?=Core::url(array('m' => 'index', 'a' => 'index'))?>">首页</a> <span class="divider">/</span></li>
+    <li><a href="<?=Core::url(array('m' => 'advertising', 'a' => 'index'))?>">广告</a> <span class="divider">/</span></li>
+    <li class="active"><?=(isset($req_id) && $req_id) > 0 ? '编辑' : '添加'?></li>
+</ul>
+<form id="ad_form" class="form-horizontal"></form>
+<script id="ad_form_template" type="text/template">
+    <div class="control-group">
+        <label class="control-label" for="ad_name">名称</label>
+        <div class="controls">
+            <input type="text" id="ad_name" name="name" value="<%=name%>" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="adv_id">所属广告主</label>
+        <div class="controls">
+            <select id="adv_id" name="adv_id">
+                <option value="0">--选择广告主--</option>
+                <% _.each(advertisers, function(adv, index) { %>
+                <% if(adv.id == adv_id) { %>
+                <option value="<%=adv.id%>" selected="selected"><%=adv.name%></option>
+                <% } else { %>
+                <option value="<%=adv.id%>"><%=adv.name%></option>
+                <% } %>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="material_id">素材</label>
+        <div class="controls">
+            <select id="material_id" name="material_id">
+                <option value="0">--选择素材--</option>
+                <% _.each(materials, function(material, index) { %>
+                <% if(material.id == material_id) { %>
+                <option value="<%=material.id%>" selected="selected"><%=material.name%></option>
+                <% } else { %>
+                <option value="<%=material.id%>"><%=material.name%></option>
+                <% } %>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="member_id">关联保卡</label>
+        <div class="controls">
+            <select id="member_id" name="member_id">
+                <option value="0">--选择素材--</option>
+                <% _.each(members, function(members, index) { %>
+                <% if(members.id == member_id) { %>
+                <option value="<%=members.id%>" selected="selected"><%=members.name%></option>
+                <% } else { %>
+                <option value="<%=members.id%>"><%=members.name%></option>
+                <% } %>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="form-actions">
+        <a id="return_link" href="<?= Core::url(array('m' => 'advertising', 'a' => 'index')); ?>" class="btn btn-small">
+            <i class="icon-arrow-left"></i>返回列表
+        </a>
+        <button id="save_ad_btn" type="button" class="btn btn-primary btn-small">
+            <i class="icon-hdd icon-white"></i>保存数据
+        </button>
+    </div>
+</script>
+<?php include($VIEW_PATH . "/_public/footer.html") ?>

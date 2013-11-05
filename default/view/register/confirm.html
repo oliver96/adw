@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/bootstrap.css" />
+        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/global.css" />
+        <script type="text/javascript">
+            var App =  App || {};
+            App.root = '<?=$WEB_ROOT?>';
+            App.module = '<?=$MODULE_NAME?>';
+            App.action = '<?=$ACTION_NAME?>';
+            eval('App.params = <?=$params?>');
+        </script>
+        <script type="text/javascript" data-main="<?=$WEB_ROOT?>/pub/js/main" src="<?=$WEB_ROOT?>/pub/js/require.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <form id="member_form" class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="name">电子保卡号</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['mobile']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="name">名称</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['name']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="real_name">真实姓名</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['real_name']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mobile">手机号码</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['mobile']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="qq">QQ号码</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['qq']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="email">邮件地址</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['email']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="province">省份</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['province']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="city">城市</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['city']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="addr">地址</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['addr']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="store">门店</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['store_name']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="seller">店员</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['seller_name']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="device">设备名称型号</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['device']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="hard_addr">MAC地址</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['hard_addr']?></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="sim_no">设备联网登记SIM卡号</label>
+                    <div class="controls">
+                        <label class="inline checkbox"><?=$form['sim_no']?></label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button id="activate_button" type="button" class="btn btn-primary btn-small">
+                        <i class="icon-arrow-right icon-white"></i>确认注册激活
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
