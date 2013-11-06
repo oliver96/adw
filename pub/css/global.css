@@ -59,3 +59,8 @@ fieldset legend {
 .controls fieldset {
     margin-left: 0;
 }
+
+.index {
+    padding-top: 60px;
+    padding-bottom: 10px;
+}

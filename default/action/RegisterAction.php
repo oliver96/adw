@@ -55,7 +55,15 @@ class RegisterAction extends CommonAction {
         $this->output();
     }
     
-    public function saveData() {
+    public function store() {
+        $this->output();
+    }
+    
+    public function seller() {
+        $this->output();
+    }
+    
+    public function saveMember() {
         $id     = $this->request->getParameter('id');
         $name   = $this->request->getParameter('name');
         $input  = $this->request->getInput();
@@ -74,6 +82,76 @@ class RegisterAction extends CommonAction {
         else {
             Session::set('CacheForm', $input);
             $this->outputJson(array('status' => true));
+        }
+    }
+    
+    public function saveStore() {
+        $id     = $this->request->getParameter('id');
+        $name   = $this->request->getParameter('name');
+        $input  = $this->request->getInput();
+        
+        $input['created'] = date('Y-m-d H:i:s');
+        
+        $store = new StoreModel();
+        
+        $existRecords = false;
+        if($id > 0) {
+            $existRecords = $store->getCount(array('id' => "not {$id}", 'name' => $name));
+        }
+        else {
+            $existRecords = $store->getCount(array('name' => $name));
+        }
+        if($existRecords > 0) {
+            $this->outputJson(array(
+                'status' => false, 
+                'errors' => array(
+                    'mat_name' => '存在相同名称的记录'
+                )
+            ));
+        }
+        else {
+            if($id > 0) {
+                $store->update($input, array('id' => $id));
+            }
+            else {
+                $id = $store->insert($input);
+            }
+            $this->outputJson(array('id' => $id));
+        }
+    }
+    
+    public function saveSeller() {
+        $id     = $this->request->getParameter('id');
+        $name   = $this->request->getParameter('name');
+        $input  = $this->request->getInput();
+        
+        $input['created'] = date('Y-m-d H:i:s');
+        
+        $seller = new SellerModel();
+        
+        $existRecords = false;
+        if($id > 0) {
+            $existRecords = $seller->getCount(array('id' => "not {$id}", 'name' => $name));
+        }
+        else {
+            $existRecords = $seller->getCount(array('name' => $name));
+        }
+        if($existRecords > 0) {
+            $this->outputJson(array(
+                'status' => false, 
+                'errors' => array(
+                    'mat_name' => '存在相同名称的记录'
+                )
+            ));
+        }
+        else {
+            if($id > 0) {
+                $seller->update($input, array('id' => $id));
+            }
+            else {
+                $id = $seller->insert($input);
+            }
+            $this->outputJson(array('id' => $id));
         }
     }
     

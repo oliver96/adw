@@ -1,107 +1,104 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/bootstrap.css" />
-        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/global.css" />
-        <script type="text/javascript">
-            var App =  App || {};
-            App.root = '<?=$WEB_ROOT?>';
-            App.module = '<?=$MODULE_NAME?>';
-            App.action = '<?=$ACTION_NAME?>';
-            eval('App.params = <?=$params?>');
-        </script>
-        <script type="text/javascript" data-main="<?=$WEB_ROOT?>/pub/js/main" src="<?=$WEB_ROOT?>/pub/js/require.js"></script>
-    </head>
-    <body>
+<?php include($VIEW_PATH . "/_public/index_header.html"); ?>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
         <div class="container">
-            <form id="member_form" class="form-horizontal">
-                <div class="control-group">
-                    <label class="control-label" for="name">名称</label>
-                    <div class="controls">
-                        <input type="text" id="name" name="name" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="real_name">真实姓名</label>
-                    <div class="controls">
-                        <input type="text" id="real_name" name="real_name" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="mobile">手机号码</label>
-                    <div class="controls">
-                        <input type="text" id="mobile" name="mobile" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="qq">QQ号码</label>
-                    <div class="controls">
-                        <input type="text" id="qq" name="qq" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="email">邮件地址</label>
-                    <div class="controls">
-                        <input type="text" id="email" name="email" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="province">省份</label>
-                    <div class="controls">
-                        <select id="province" name="province"></select>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="city">城市</label>
-                    <div class="controls">
-                        <select id="city" name="city"></select>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="addr">地址</label>
-                    <div class="controls">
-                        <input type="text" id="addr" name="addr" class="span4" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="store">门店</label>
-                    <div class="controls">
-                        <select id="store_id" name="store_id"></select>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="seller">店员</label>
-                    <div class="controls">
-                        <select id="seller_id" name="seller_id"></select>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="addr">设备名称型号</label>
-                    <div class="controls">
-                        <input type="text" id="device" name="device" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="hard_addr">MAC地址</label>
-                    <div class="controls">
-                        <input type="text" id="hard_addr" name="hard_addr" value="" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="sim_no">设备联网登记SIM卡号</label>
-                    <div class="controls">
-                        <input type="text" id="sim_no" name="sim_no" value="" />
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button id="register_button" type="button" class="btn btn-primary btn-small">
-                        <i class="icon-arrow-right icon-white"></i>注册电子保卡
-                    </button>
-                </div>
-            </form>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">电子保卡注册－填写基本信息</a>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+<div class="container">
+    <form id="member_form" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="name">名称</label>
+            <div class="controls">
+                <input type="text" id="name" name="name" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="real_name">真实姓名</label>
+            <div class="controls">
+                <input type="text" id="real_name" name="real_name" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="mobile">手机号码</label>
+            <div class="controls">
+                <input type="text" id="mobile" name="mobile" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="qq">QQ号码</label>
+            <div class="controls">
+                <input type="text" id="qq" name="qq" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">邮件地址</label>
+            <div class="controls">
+                <input type="text" id="email" name="email" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="province">省份</label>
+            <div class="controls">
+                <select id="province" name="province"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="city">城市</label>
+            <div class="controls">
+                <select id="city" name="city"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="addr">地址</label>
+            <div class="controls">
+                <input type="text" id="addr" name="addr" class="span4" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="store">门店</label>
+            <div class="controls">
+                <select id="store_id" name="store_id"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="seller">店员</label>
+            <div class="controls">
+                <select id="seller_id" name="seller_id"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="addr">设备名称型号</label>
+            <div class="controls">
+                <input type="text" id="device" name="device" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="hard_addr">MAC地址</label>
+            <div class="controls">
+                <input type="text" id="hard_addr" name="hard_addr" value="" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="sim_no">设备联网登记SIM卡号</label>
+            <div class="controls">
+                <input type="text" id="sim_no" name="sim_no" value="" />
+            </div>
+        </div>
+        <div class="form-actions">
+            <a id="return_link" href="<?= Core::url(array('m' => 'register', 'a' => 'index')); ?>" class="btn btn-small">
+                <i class="icon-arrow-left"></i>返回列表
+            </a>
+            <button id="register_button" type="button" class="btn btn-primary btn-small">
+                <i class="icon-arrow-right icon-white"></i>注册电子保卡
+            </button>
+        </div>
+    </form>
+</div>
+<?php include($VIEW_PATH . "/_public/index_footer.html"); ?>

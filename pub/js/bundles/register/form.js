@@ -10,7 +10,7 @@ define([
     var member = new Member();
     member.urlRoot = App.router.url({
         'm': 'register', 
-        'a': 'api'
+        'a': 'saveMember'
     });
     var MainPageView = Backbone.View.extend({
         el: $("body")

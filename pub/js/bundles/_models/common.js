@@ -40,7 +40,6 @@ Backbone.CommonModel = (function ( Backbone, _, $ ) {
             }
             // 手机号码 
             , isMobile: function(value) {
-                console.log(CommonModel.prototype.patterns.mobile);
                 return CommonModel.prototype.pattern(value, CommonModel.prototype.patterns.mobile);
             }
             // QQ号码 

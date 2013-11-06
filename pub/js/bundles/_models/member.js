@@ -75,6 +75,7 @@ Member = (function ( Backbone, _, $ ) {
                 this.addError('sim_no', '设备联网登记SIM卡号不能为空。');
                 hasError = true;
             }
+            console.log(hasError);
             return hasError;
         }
     });

@@ -1,86 +1,75 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="<?php echo $WEB_ROOT?>/public/css/bootstrap.css">
-        <script type="text/javascript">
-            var App     = App || {};
-            App.root    = "<?php echo $WEB_ROOT;?>";
-            App.group   = '<?php echo $GROUP_NAME ?>';
-            App.module  = '<?php echo $MODULE_NAME ?>';
-            App.action  = '<?php echo $ACTION_NAME ?>';
-        </script>
-        <!--[if lte IE 8]>
-        <script type="text/javascript" src="public/js/respond.js"></script>
-        <![endif]-->
-        <!-- Load the script "js/main.js" as our entry point -->
-        <script data-main="<?php echo $WEB_ROOT?>/public/js/main" src="<?php echo $WEB_ROOT?>/public/js/libs/require/require.js"></script>
-    </head>
-    <body>
+<?php include($VIEW_PATH . "/_public/index_header.html"); ?>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
         <div class="container">
-            <div class="page-header">
-                <h3>您的电子保单号：223424211231，已激活</h3>
-            </div>
-            <h4>流量详情：</h4>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>网卡号码</th>
-                    <th>SIM卡号</th>
-                    <th>本月流量查询计量截止日期</th>
-                    <th>套餐</th>
-                    <th>套餐包含流量</th>
-                    <th>本月使用流量</th>
-                    <th>套餐累计使用流量</th>
-                    <th>套餐累计剩余可用流量</th>
-                    <th>登记客户名称</th>
-                    <th>联系电话</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>48-5D-60-3B-33-49</td>
-                    <td>13420234233</td>
-                    <td>2013-11-01</td>
-                    <td>神舟行16元包月</td>
-                    <td>30M</td>
-                    <td>5M</td>
-                    <td>300M</td>
-                    <td>200M</td>
-                    <td>张某某</td>
-                    <td>13323242334</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>48-5D-60-3B-33-49</td>
-                    <td>13420234233</td>
-                    <td>2013-11-01</td>
-                    <td>神舟行16元包月</td>
-                    <td>30M</td>
-                    <td>5M</td>
-                    <td>300M</td>
-                    <td>200M</td>
-                    <td>张某某</td>
-                    <td>13323242334</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>48-5D-60-3B-33-49</td>
-                    <td>13420234233</td>
-                    <td>2013-11-01</td>
-                    <td>神舟行16元包月</td>
-                    <td>30M</td>
-                    <td>5M</td>
-                    <td>300M</td>
-                    <td>200M</td>
-                    <td>张某某</td>
-                    <td>13323242334</td>
-                  </tr>
-                </tbody>
-              </table>
+            <a class="btn" href="<?=Core::url(array('m' => 'register', 'a' => 'form'))?>">注册电子保卡</a>
+            <a class="btn" href="<?=Core::url(array('m' => 'register', 'a' => 'store'))?>">注册门店</a>
+            <a class="btn" href="<?=Core::url(array('m' => 'register', 'a' => 'seller'))?>">注册店员</a>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+<div class="container">
+    <div class="page-header">
+        <h3>您的电子保单号：223424211231，已激活</h3>
+    </div>
+    <h4>流量详情：</h4>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>网卡号码</th>
+            <th>SIM卡号</th>
+            <th>本月流量查询计量截止日期</th>
+            <th>套餐</th>
+            <th>套餐包含流量</th>
+            <th>本月使用流量</th>
+            <th>套餐累计使用流量</th>
+            <th>套餐累计剩余可用流量</th>
+            <th>登记客户名称</th>
+            <th>联系电话</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>48-5D-60-3B-33-49</td>
+            <td>13420234233</td>
+            <td>2013-11-01</td>
+            <td>神舟行16元包月</td>
+            <td>30M</td>
+            <td>5M</td>
+            <td>300M</td>
+            <td>200M</td>
+            <td>张某某</td>
+            <td>13323242334</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>48-5D-60-3B-33-49</td>
+            <td>13420234233</td>
+            <td>2013-11-01</td>
+            <td>神舟行16元包月</td>
+            <td>30M</td>
+            <td>5M</td>
+            <td>300M</td>
+            <td>200M</td>
+            <td>张某某</td>
+            <td>13323242334</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>48-5D-60-3B-33-49</td>
+            <td>13420234233</td>
+            <td>2013-11-01</td>
+            <td>神舟行16元包月</td>
+            <td>30M</td>
+            <td>5M</td>
+            <td>300M</td>
+            <td>200M</td>
+            <td>张某某</td>
+            <td>13323242334</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<?php include($VIEW_PATH . "/_public/index_footer.html"); ?>
