@@ -1,0 +1,46 @@
+<?php include($VIEW_PATH . "/_public/index_header.html"); ?>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">店员注册</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <form id="seller_form" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="name">名称</label>
+                <div class="controls">
+                    <input type="text" id="name" name="name" value="" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="store">所属门店</label>
+                <div class="controls">
+                    <select id="store_id" name="store_id"></select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="mobile">手机号码</label>
+                <div class="controls">
+                    <input type="text" id="mobile" name="mobile" value="" />
+                </div>
+            </div>
+            <div class="form-actions">
+                <a id="return_link" href="<?= Core::url(array('m' => 'register', 'a' => 'index')); ?>" class="btn btn-small">
+                    <i class="icon-arrow-left"></i>返回列表
+                </a>
+                <button id="register_button" type="button" class="btn btn-primary btn-small">
+                    <i class="icon-hdd icon-white"></i>保存数据
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<?php include($VIEW_PATH . "/_public/index_footer.html"); ?>
