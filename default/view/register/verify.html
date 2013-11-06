@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/bootstrap.css" />
+        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" href="<?=$WEB_ROOT?>/pub/css/global.css" />
+        <script type="text/javascript">
+            var App =  App || {};
+            App.root = '<?=$WEB_ROOT?>';
+            App.module = '<?=$MODULE_NAME?>';
+            App.action = '<?=$ACTION_NAME?>';
+            eval('App.params = <?=$params?>');
+        </script>
+        <script type="text/javascript" data-main="<?=$WEB_ROOT?>/pub/js/main" src="<?=$WEB_ROOT?>/pub/js/require.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <form id="member_form" class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="verify_code">&nbsp;</label>
+                    <div class="controls">
+                        <input type="text" id="verify_code" name="verify_code" placeholder="输入手机验证码" value="" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">&nbsp;</label>
+                    <div class="controls">
+                        <label class="inline checkbox">
+                            <input id="accept" type="checkbox" /> 已阅读并接受“电子保卡服务协议”
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">&nbsp;</label>
+                    <div class="controls">
+                        <button id="register_button" type="button" class="btn btn-primary disabled">确认注册激活</button>
+                        <button id="reverify_button" type="button" class="btn">重新获取验证码</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="save_notice_win" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">注册提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="win_content"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </body>
+</html>

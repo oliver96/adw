@@ -1,0 +1,53 @@
+<?php include($VIEW_PATH . "/_public/header.html"); ?>
+<ul class="breadcrumb">
+    <li><a href="<?=Core::url(array('m' => 'index', 'a' => 'index'))?>">首页</a> <span class="divider">/</span></li>
+    <li><a href="<?=Core::url(array('m' => 'member', 'a' => 'index'))?>">保卡</a> <span class="divider">/</span></li>
+    <li class="active"><?=(isset($req_id) && $req_id) > 0 ? '编辑' : '添加'?></li>
+</ul>
+<div class="well">
+    <a href="<?= Core::url(array('m' => 'member', 'a' => 'edit')); ?>" class="btn btn-primary btn-small">
+        <i class="icon-plus icon-white"></i>添加
+    </a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th colspan="3">
+                <button id="edit_button" class="btn btn-mini">修改</button>
+                <button id="delete_button" class="btn btn-mini">删除</button>
+                <button id="valid_button" class="btn btn-mini">激活</button>
+                <button id="pause_button" class="btn btn-mini">激活失效</button>
+            </th>
+        <tr>
+        <tr>
+            <th width="5%"><input id="all_checked" type="checkbox" value="all" /></th>
+            <th width="10%">用户名称</th>
+            <th width="10%">真实姓名</th>
+            <th width="10%">联系方式</th>
+            <th width="10%">门店</th>
+            <th width="10%">保卡号</th>
+            <th width="20%">详细地址</th>
+            <th width="5%">是否激活</th>
+        </tr>
+    </thead>
+    <tbody id="member_list">
+    </tbody>
+</table>
+<div class="pagination pull-right"></div>
+<script id="member_item_template" type="text/template">
+    <td width="5%"><input type="checkbox" name="row_checked" value="<%=id%>" /></td>
+    <td><a href="javascript:void(0);" class="edit-link"><%=name%></a></td>
+    <td><%=real_name%></td>
+    <td>
+        手机：<%=mobile%><br />
+        QQ：<%=qq%>
+    </td>
+    <td>
+        门店：<%=store_name%><br />
+        店员：<%=seller_name%>
+    </td>
+    <td><%=invoice_no%></td>
+    <td><%=addr%>,<%=city%>,<%=province%></td>
+    <td><%=(status == 1 ? '是' : '否')%></td>
+</script>
+<?php include($VIEW_PATH . "/_public/footer.html") ?>

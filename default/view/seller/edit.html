@@ -1,0 +1,55 @@
+<?php include($VIEW_PATH . "/_public/header.html");?>
+<ul class="breadcrumb">
+    <li><a href="<?=Core::url(array('m' => 'index', 'a' => 'index'))?>">首页</a> <span class="divider">/</span></li>
+    <li><a href="<?=Core::url(array('m' => 'seller', 'a' => 'index'))?>">店员</a> <span class="divider">/</span></li>
+    <li class="active"><?=(isset($req_id) && $req_id) > 0 ? '编辑' : '添加'?></li>
+</ul>
+<form id="seller_form" class="form-horizontal"></form>
+<script id="seller_form_template" type="text/template">
+    <div class="control-group">
+        <label class="control-label" for="name">名称</label>
+        <div class="controls">
+            <input type="text" id="name" name="name" value="<%=name%>" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="store">所属门店</label>
+        <div class="controls">
+            <select id="store_id" name="store_id">
+            <% _.each(stories, function(storeRaw, index) { %>
+                <% if(storeRaw.id == store_id) { %>
+                <option value="<%=storeRaw.id%>" selected="selected"><%=storeRaw.name%></option>
+                <% } else { %>
+                <option value="<%=storeRaw.id%>"><%=storeRaw.name%></option>
+                <% } %>
+            <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="mobile">手机号码</label>
+        <div class="controls">
+            <input type="text" id="mobile" name="mobile" value="<%=mobile%>" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="status">是否授权</label>
+        <div class="controls">
+            <label class="inline radio">
+                <input type="radio" name="status" id="status1" value="1" checked> 是
+            </label>
+            <label class="inline radio">
+                <input type="radio" name="status" id="status0" value="0"> 否
+            </label>
+        </div>
+    </div>
+    <div class="form-actions">
+        <a id="return_link" href="<?= Core::url(array('m' => 'seller', 'a' => 'index')); ?>" class="btn btn-small">
+            <i class="icon-arrow-left"></i>返回列表
+        </a>
+        <button id="save_seller_btn" type="button" class="btn btn-primary btn-small">
+            <i class="icon-hdd icon-white"></i>保存数据
+        </button>
+    </div>
+</script>
+<?php include($VIEW_PATH . "/_public/footer.html") ?>

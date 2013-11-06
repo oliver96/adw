@@ -1,0 +1,69 @@
+<?php include($VIEW_PATH . "/_public/header.html");?>
+<ul class="breadcrumb">
+    <li><a href="<?=Core::url(array('m' => 'index', 'a' => 'index'))?>">首页</a> <span class="divider">/</span></li>
+    <li><a href="<?=Core::url(array('m' => 'store', 'a' => 'index'))?>">门店</a> <span class="divider">/</span></li>
+    <li class="active"><?=(isset($req_id) && $req_id) > 0 ? '编辑' : '添加'?></li>
+</ul>
+<form id="store_form" class="form-horizontal"></form>
+<script id="store_form_template" type="text/template">
+    <div class="control-group">
+        <label class="control-label" for="name">名称</label>
+        <div class="controls">
+            <input type="text" id="name" name="name" value="<%=name%>" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="province">省份</label>
+        <div class="controls">
+            <select id="province" name="province">
+            <% _.each(provinces, function(provinceRaw, index) { %>
+                <% if(provinceRaw.code == province) { %>
+                <option value="<%=provinceRaw.code%>" selected="selected"><%=provinceRaw.name%></option>
+                <% } else { %>
+                <option value="<%=provinceRaw.code%>"><%=provinceRaw.name%></option>
+                <% } %>
+            <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="city">城市</label>
+        <div class="controls">
+            <select id="city" name="city">
+            <% _.each(cities, function(cityRaw, index) { %>
+                <% if(cityRaw.code == city) { %>
+                <option value="<%=cityRaw.code%>" selected="selected"><%=cityRaw.name%></option>
+                <% } else { %>
+                <option value="<%=cityRaw.code%>"><%=cityRaw.name%></option>
+                <% } %>
+            <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="addr">详细地址</label>
+        <div class="controls">
+            <input type="text" id="addr" name="addr" class="span4" value="<%=addr%>" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="status">是否授权</label>
+        <div class="controls">
+            <label class="inline radio">
+                <input type="radio" name="status" id="status1" value="1" checked> 是
+            </label>
+            <label class="inline radio">
+                <input type="radio" name="status" id="status0" value="0"> 否
+            </label>
+        </div>
+    </div>
+    <div class="form-actions">
+        <a id="return_link" href="<?= Core::url(array('m' => 'store', 'a' => 'index')); ?>" class="btn btn-small">
+            <i class="icon-arrow-left"></i>返回列表
+        </a>
+        <button id="save_store_btn" type="button" class="btn btn-primary btn-small">
+            <i class="icon-hdd icon-white"></i>保存数据
+        </button>
+    </div>
+</script>
+<?php include($VIEW_PATH . "/_public/footer.html") ?>
