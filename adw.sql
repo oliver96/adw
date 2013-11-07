@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 �?11 �?03 �?15:14
+-- 生成日期: 2013 �?11 �?07 �?14:19
 -- 服务器版本: 5.5.15
 -- PHP 版本: 5.5.4
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `advertisers` (
   `detail` tinytext NOT NULL COMMENT '联系人详细信息',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- 转存表中的数据 `advertisers`
@@ -50,10 +50,7 @@ INSERT INTO `advertisers` (`id`, `name`, `indus_id`, `credit`, `contact`, `email
 (4, 'TEST_342342232', 2, 3, 'sdfdsf', 'www@adsame.com', 'sdfsf', '0000-00-00 00:00:00'),
 (5, 'sdasdad', 3, 3, 'sada', 'sdfsf@sohu.com', 'sdfsfsd', '0000-00-00 00:00:00'),
 (6, 'sdasdaddsdf', 3, 3, 'sada', 'sdfsf@sohu.com', 'sdfsfsd', '0000-00-00 00:00:00'),
-(7, 'sdasdaddsdfhh', 3, 3, 'sada', 'sdfsf@sohu.com', 'sdfsfsd', '0000-00-00 00:00:00'),
-(8, 'vxcvxvcxv', 4, 3, 'xcvxvxvx', 'wew@sohu.com', 'dddddd', '0000-00-00 00:00:00'),
-(10, 'SDFSFSF', 6, 4, '20000', '222@SOHU.COM', 'SFDSF', '2013-11-03 06:54:40'),
-(11, 'sdfsdfs', 3, 4, '钟昌铣', 'sohu@sohu.com', 'sdfsfs', '2013-11-03 06:57:55');
+(10, 'SDFSFSF', 6, 4, '20000', '222@SOHU.COM', 'SFDSF', '2013-11-03 06:54:40');
 
 -- --------------------------------------------------------
 
@@ -895,7 +892,6 @@ CREATE TABLE IF NOT EXISTS `materials` (
 --
 
 INSERT INTO `materials` (`id`, `name`, `adv_id`, `type`, `url`, `size`, `created`) VALUES
-(1, 'sdfsfsdf', 2, 'image', 'http://localhost/adw/upload/20131103155554_364.jpg', 0, '0000-00-00 00:00:00'),
 (2, 'tEST324234', 1, 'image', 'http://localhost/adw/upload/20131103155720_821.jpg', 0, '2013-11-03 07:57:00'),
 (3, 'TESETST232', 1, 'image', 'http://localhost/adw/upload/20131103155900_138.jpg', 0, '2013-11-03 07:59:00');
 
@@ -925,7 +921,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `status` int(11) DEFAULT '0' COMMENT '0:未激活状态\n1:已激活状态',
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `members`
@@ -939,9 +935,10 @@ INSERT INTO `members` (`id`, `name`, `real_name`, `mobile`, `qq`, `email`, `prov
 (5, 'TEST.add', 'zcx', '13923423423', '23324234', NULL, 'SH', 'JS', '亭林镇新建村金风路2034号', 3, 2, '', 'sdfsfsfs', 'sdfsdfsdf', 'sfsdfsdf', 1, '2013-11-03 10:37:00'),
 (6, 'sfsdfsfsf', 'sdfsfsf', '13823424234', '234234242', NULL, 'AH', 'AQ', 'efwerwrwr', 4, 3, '', 'wer', 'werwr', 'werwrwr', 1, '2013-11-03 12:36:45'),
 (7, 'sdffffffff', '15835434534', '15835434534', '158354345', NULL, 'AH', 'AQ', '15835434534', 1, 1, '', '15835434534', '15835434534', '15835434534', 1, '2013-11-03 12:38:49'),
-(8, 'sdfdsfs', 'sfsdf', '13823424234', '32342342', 'oliver@sohu.com', 'AH', 'AQ', 'sdfsfsfsfsdf', 2, 3, '', 'sdfsfsf', 'sdfsfsf', 'sdfsfsf', 1, '2013-11-03 13:25:30'),
-(9, 'sdfsafds', 'sdffsdf', '13823424234', '12312313', 'oliver96@sohu.com', 'AH', 'AQ', 'sdfsdfsf', 1, 1, '', 'sdfsf', 'sfsfsf', 'sdfsfsf', 1, '2013-11-03 13:30:36'),
-(10, 'sdfsfsf', 'sdsdfsf', '15823423424', '3423424', 'oliver96@sohu.com', 'BJ', 'CD', 'sdfsssssssss', 1, 1, '', 'sdfsfsdfsf', 'werwrewr', 'ewrwerwer', 1, '2013-11-03 15:04:02');
+(8, 'sdfdsfs', 'sfsdf', '13823424234', '32342342', 'oliver@sohu.com', 'AH', 'AQ', 'sdfsfsfsfsdf', 2, 3, '', 'sdfsfsf', 'sdfsfsf', 'sdfsfsf', 0, '2013-11-03 13:25:30'),
+(9, 'sdfsafds', 'sdffsdf', '13823424234', '12312313', 'oliver96@sohu.com', 'AH', 'AQ', 'sdfsdfsf', 1, 1, '', 'sdfsf', 'sfsfsf', 'sdfsfsf', 0, '2013-11-03 13:30:36'),
+(10, 'sdfsfsf', 'sdsdfsf', '15823423424', '3423424', 'oliver96@sohu.com', 'BJ', 'CD', 'sdfsssssssss', 1, 1, '', 'sdfsfsdfsf', 'werwrewr', 'ewrwerwer', 0, '2013-11-03 15:04:02'),
+(11, 'sdfsfsfsf', 'sdfsdfsf', '13823424234', '3453453', '232@sohu.com', 'AH', 'AQ', '234234234', 1, 3, '', '23423424', '234234234', '234234234', 1, '2013-11-06 13:59:06');
 
 -- --------------------------------------------------------
 
@@ -975,17 +972,33 @@ CREATE TABLE IF NOT EXISTS `sellers` (
   `status` int(11) DEFAULT NULL COMMENT '是否许可',
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='店员' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='店员' AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `sellers`
 --
 
 INSERT INTO `sellers` (`id`, `name`, `store_id`, `mobile`, `status`, `created`) VALUES
-(1, 'sdfsfsfsf', 1, NULL, 1, '2013-11-03 03:40:31'),
-(2, 'sdfsfsf', 1, '13442342443', 1, '2013-11-03 05:05:33'),
 (3, 'TEWT', 2, '13823424234', 1, '2013-11-03 05:05:20'),
-(4, 'TEST234234', 1, '13823424234', 1, '2013-11-03 05:05:04');
+(4, 'TEST234234', 1, '13823424234', 0, '2013-11-03 05:05:04'),
+(5, 'sdfsfsf', 9, '13823424234', 0, '2013-11-06 14:37:33');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `stat_ad`
+--
+
+DROP TABLE IF EXISTS `stat_ad`;
+CREATE TABLE IF NOT EXISTS `stat_ad` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sim_no` varchar(20) DEFAULT NULL,
+  `mac_addr` varchar(30) DEFAULT NULL,
+  `remote_ip` varchar(15) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `visit_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='广告统计' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1003,7 +1016,7 @@ CREATE TABLE IF NOT EXISTS `stores` (
   `status` int(11) DEFAULT NULL COMMENT '是否授权',
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='门店信息列表' AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='门店信息列表' AUTO_INCREMENT=10 ;
 
 --
 -- 转存表中的数据 `stores`
@@ -1015,15 +1028,10 @@ INSERT INTO `stores` (`id`, `name`, `province`, `city`, `addr`, `status`, `creat
 (3, 'TEST0w3234234', 'GX', 'BH', 'fsfsfsfsfsf', NULL, '2013-11-03 02:10:05'),
 (4, 'sdfsadfsaf', 'AH', 'AQ', 'sdaffffffffffffffffadfsdfa', NULL, '2013-11-03 02:12:19'),
 (5, 'sdfsdfsf', 'AH', 'AQ', 'sdfsfsdf', NULL, '2013-11-03 02:13:19'),
-(6, 'sdfsfsf', 'AH', 'AQ', 'sdfsdf', NULL, '2013-11-03 02:13:40'),
-(7, 'sdfsafasdfsdfsaf', 'AH', 'AQ', 'sdafsafasdfsadfasf', NULL, '2013-11-03 02:15:00'),
-(8, 'sdfsfsfsf', 'HB', 'ES', 'sdffffffffffff', 0, '2013-11-03 02:22:03'),
-(9, 'sdfsfsdfs', 'AH', 'AQ', 'sdfsdfsf', 1, '2013-11-03 02:24:13'),
-(10, 'sfssadfsa', 'AH', 'AQ', 'sdfasdfasdf', 1, '2013-11-03 02:24:48'),
-(11, 'werwrwr', 'AH', 'AQ', 'werwrwer', 0, '2013-11-03 02:25:33'),
-(12, 'ertetet', 'AH', 'AQ', 'ertetet', 1, '2013-11-03 02:25:52'),
-(13, 'ertet', 'AH', 'AQ', 'ertetet', 0, '2013-11-03 02:25:59'),
-(14, 'sdfsf', 'AH', 'AQ', 'sdfsfsdfsf', 0, '2013-11-03 02:30:13');
+(6, 'sdfsfsf', 'AH', 'AQ', 'sdfsdf', 1, '2013-11-03 02:13:40'),
+(7, 'sdfsafasdfsdfsaf', 'AH', 'AQ', 'sdafsafasdfsadfasf', 1, '2013-11-03 02:15:00'),
+(8, 'sdfsfsfsf', 'HB', 'ES', 'sdffffffffffff', 1, '2013-11-03 02:22:03'),
+(9, '测试商店', 'BJ', 'FS', '无可奈何花落去 ', 0, '2013-11-06 14:37:14');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
